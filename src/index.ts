@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express'
-import { uuid } from 'uuidv4';
 
 interface User {
     nome: string;
