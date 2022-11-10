@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express'
+import {uuid} from 'uuidv4'
 
 interface User {
+    id: string;
     nome: string;
     tel: string;
     idade: number;
@@ -17,8 +19,10 @@ server.get('/api/v1/users', (req: Request, res: Response) => {
 
 server.post('/api/v1/users', (req: Request, res: Response) => {
     const {nome, tel, idade} = req.body
+    const id = uuid()
 
-    const newUser: User = {
+    const newUser: User = { 
+        id: id,
         nome: nome,
         tel: tel,
         idade: idade
